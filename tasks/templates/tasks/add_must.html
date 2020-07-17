@@ -1,0 +1,15 @@
+<h5>Добавление задачи</h5>
+<h9>*все поля обязательны для заполнения</h9>
+
+<div class="mb-3">
+  <form action="{%  url 's' %}" method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button typeof="submit" class="btn btn-primary btn-block"> Добавить задачу </button>
+</form>
+</div>
+
+
+

@@ -1,4 +1,6 @@
 from django.db import models
+
+
 # must may want
 
 # Create your models here.
@@ -17,6 +19,7 @@ class Must(models.Model):
     def __str__(self):
         return self.title
 
+
 class May(models.Model):
     title = models.CharField(max_length=150, verbose_name='Запись')
     # content = models.TextField(null=True, blank=True, verbose_name='Описание')
@@ -31,6 +34,7 @@ class May(models.Model):
     def __str__(self):
         return self.title
 
+
 class Want(models.Model):
     title = models.CharField(max_length=150, verbose_name='Запись')
     # content = models.TextField(null=True, blank=True, verbose_name='Описание')
@@ -44,6 +48,7 @@ class Want(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Rubric(models.Model):
     name = models.CharField(max_length=20, verbose_name='Название')

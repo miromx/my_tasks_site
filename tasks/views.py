@@ -2,6 +2,17 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Must, May, Want, Rubric
 
+from django.shortcuts import render, get_object_or_404, redirect
+from .forms import MustForm
+from django.views.generic import ListView, DetailView, CreateView
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator
+# from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+from django.contrib.auth import login, logout
+from django.core.mail import send_mail
+
 
 # Create your views here.
 class HomeNews(ListView):
@@ -30,3 +41,11 @@ class HomeNews(ListView):
     #     :return: только опубликованные данные
     #     """
     #     return News.objects.filter(is_published=True).select_related('category')
+
+
+class CreateTask(CreateView):
+    form_class = MustForm
+    template_name = 'tasks/add_must.html'
+    # login_url = '/admin/'
+    raise_exception = True
+    success_url = reverse_lazy('home') # редирект на главную
