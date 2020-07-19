@@ -9,19 +9,38 @@
 <body>
 
 {% include 'inc/_navbar.html' %}
-<section class="section">
-  <div class="container">
-    <h5 class="title">
-      Some Stuff
-    </h5>
-    <p class="subtitle">
-      My first website with <strong>Bulma</strong>!
-    </p>
-    {% block content %}{% endblock %}
-  </div>
-</section>
-<p>Some text</p>
+<div class="container mt-3 mb-3">
+  <div class="card-deck">
 
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        {% block content %}{% endblock %}
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <a class="btn btn-danger" href="{% url 's' %}" role="button">Добавить</a>
+      </div>
+    </div>
+
+    <div class="card p-3">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <button type="button" class="btn btn-warning">Primary</button>
+      </div>
+    </div>
+
+    <div class="card p-3">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <button type="button" class="btn btn-success">Primary</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
